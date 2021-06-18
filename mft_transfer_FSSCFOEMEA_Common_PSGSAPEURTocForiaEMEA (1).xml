@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Transfer createdBy="mftuser" id="xfer_c9a8a989-dbda-4e22-a5d1-60e5225fcdbc" name="FSSCFOEMEA_Common_PSGSAPEURTocForiaEMEA" priority="medium" xmlns="http://xmlns.oracle.com/mft/transfer">
+   <Source>
+      <SourceRef id="soRef_8701443a-df91-433d-bc20-147605adc6c1" sourceRef="/mft/source/so_1ce6f79f-0cbb-4632-be46-a76556359e73.xml#so_1ce6f79f-0cbb-4632-be46-a76556359e73"/>
+   </Source>
+   <ContentFilters/>
+   <Targets>
+      <Target id="xfer_tgt_5976369b-0b05-48a4-b10d-c872fe9bab2e">
+         <TargetRef id="tgtRef_67d77801-7766-49c6-86a9-bed92dfa3b26" targetRef="/mft/target/tgt_5d6cdc67-2c38-4a8f-91d1-3a1a88d92868.xml#tgt_5d6cdc67-2c38-4a8f-91d1-3a1a88d92868">
+            <TechnologyBindingOverrides xmlns="http://xmlns.oracle.com/mft/binding">
+               <SSH-FTP folder="SAP/PSG/QA"/>
+            </TechnologyBindingOverrides>
+         </TargetRef>
+         <TargetSettings>
+            <Pre-Processing xmlns="http://xmlns.oracle.com/mft/common">
+               <PGPEncryption pre-process-order="1">
+                  <SecuritySpecificationRef armoured="ascii" encryptionKeyAlias="Cforia-Thermo2" id="secSpecRef_b51b18cf-09fc-48fa-ac03-60030d2211b5" securitySpecificationRef="/mft/security/Security.xml#pgp_encrypt"/>
+               </PGPEncryption>
+            </Pre-Processing>
+         </TargetSettings>
+      </Target>
+   </Targets>
+</Transfer>
